@@ -1,0 +1,354 @@
+.main {
+	position: relative;
+	width: 100%;
+
+		&__wrapper {
+			position: relative;
+			display: block;
+			max-width: 1280px;
+			margin: 0 auto;
+		}
+
+		&__title {
+			padding: 70px 0 70px 0;
+			margin-left: 8%;
+			font-size: 48px;
+			font-weight: bold;
+			color: @dark-green;
+		}
+
+		&__more-button {
+			position: absolute;
+			bottom: 70px;
+			left: 50%;
+			width: 40%;
+			height: 70px;
+			transform: translateX(-50%);
+			background-color: @blue;
+			text-align: center;
+			border-radius: 5px;
+			font-size: 14px;
+			line-height: 14px;
+			font-weight: bold;
+			color: white;
+			text-transform: uppercase;
+			padding-top: 30px;
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten(@blue, 10%);
+			}
+
+		}
+
+		&__scroll-button {
+			position: fixed;
+			display: none;
+			right: 5%;
+			top: 50%;
+			cursor: pointer;
+
+			svg {
+				width: 80px;
+				height: 80px;
+				fill: @dark-cream;
+
+				&:hover {
+					fill: darken(@dark-cream, 20%);
+				}
+			}
+		}
+}
+
+.flat {
+	position: relative;
+
+
+	&__wrapper {
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		padding: 90px 107px 200px 107px;
+		background-color: white;
+	}
+
+	&__sort-wrapper {
+		position: absolute;
+		top: 30px;
+		left: 110px;
+		z-index: 3;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		width: 35%;
+	}
+
+
+	&__sort {
+		position: relative;
+		color:  #a0a9a8;
+
+		&._active {
+			color: @dark-green;
+			background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
+			background-position: bottom;
+			background-size: 3px 1px;
+			background-repeat: repeat-x;
+		}
+	}
+
+	&__inside-button{
+		position: absolute;
+		top: -2px;
+		right: -35px;
+		display: inline-block;
+		background-color: #f0f5f1;
+		border-radius: 50%;
+		border: none;
+		text-decoration: none;
+		width: 30px;
+		height: 30px;
+		padding-right: 5px;
+		background: #f5f8f8 url("../images/arrow-sort.png") center center no-repeat; 
+
+		._arrow &{
+			display: inline-block;
+			background-color: #f0f5f1;
+			border-radius: 50%;
+			border: none;
+			text-decoration: none;
+			width: 30px;
+			height: 30px;
+			padding-right: 5px;
+			background: #f5f8f8 url("../images/arrow-sort.png") center center no-repeat;
+			-webkit-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			-o-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+
+	}
+
+	&__inside-button-2{
+		content: "";
+		display: inline-block;
+		background-color: #f0f5f1;
+		border-radius: 50%;
+		border: none;
+		text-decoration: none;
+		width: 30px;
+		height: 30px;
+		padding-right: 5px;
+		background: #f5f8f8 url("../images/arrow-sort.png") center center no-repeat; 
+
+		&._active-2{
+			content: "";
+			display: inline-block;
+			background-color: #f0f5f1;
+			border-radius: 50%;
+			border: none;
+			text-decoration: none;
+			width: 30px;
+			height: 30px;
+			padding-right: 5px;
+			background: #f5f8f8 url("../images/arrow-sort.png") center center no-repeat;
+			-webkit-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			-o-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+
+	}
+	
+	&__item-wrapper {
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		width: 318px;
+		margin-bottom: 50px;
+		padding: 53px 47px ;
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		justify-content: space-around;
+		border: 1px solid @dark-cream;
+		border-radius: 5px;
+
+		 	&._booked {
+				border-color: @dark-cream;
+		 	}
+
+		 	&._sold {
+				border-color: @grey;
+		 	}
+
+		 	&._free {
+				border-color: @dark-green;
+		 	}
+	}
+
+	&__star {
+		position: absolute;
+		top: 6px;
+		right: 16px;
+		height: 18px;
+		width: 19px;
+		fill: white;
+		stroke: @dark-cream;
+		stroke-width: 10%;
+		cursor: pointer;
+
+		&:hover {
+			fill: @dark-cream;
+			stroke: @dark-cream;
+			stroke-width: 10%;
+
+		}
+	}
+
+	&__sale-wrapper {
+		position: absolute;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		top: 6px;
+		left: 10px;
+		width: 40%;
+		height: 20px;
+		font-size:11px;
+		color: white;
+		-ms-align-items: center;
+		align-items: center;
+	}
+
+	&__sale-item {
+		display: inline-block;
+		height: 18px;
+		border-radius: 5px;
+		padding: 0 5px 0 5px;
+		background-color: @red;
+		cursor: pointer;
+	}
+
+	&__item-img {
+		position: relative;
+		margin: 0 auto;
+		min-height: 214px;
+		min-width: 214px;
+
+		
+		img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__title {
+		padding-top: 48px;
+		font-size: 24px;
+		color: @dark-green;
+		font-weight: bold;
+	}
+
+	&__subtitle {
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-webkit-flex-direction: row;
+		-moz-flex-direction: row;
+		-ms-flex-direction: row;
+		-o-flex-direction: row;
+		flex-direction: row;
+		padding-top: 52px;
+	}
+
+	&__subtitle-style {
+		border-left: 3px solid @blue;
+		border-radius: 1px;
+		padding-left: 4px;
+		color: @blue;
+		font-size: 16px;
+	}
+
+	&__subtitle-digits {
+		display: block;
+		color: @black;
+		margin-left: 25px;
+		font-size: 18px;
+
+		span {
+			display: block;
+			font-size: 13px;
+		}
+
+		&:last-child {
+			padding-top: 4px;
+		}
+	}
+
+	&__price {
+		font-size: 24px;
+		color: @black;
+		font-weight: bold;
+		padding-top: 42px;
+		padding-bottom: 30px;
+	}
+
+	 &__status-bar {
+	 	position: absolute;
+	 	bottom: 0;
+	 	left: 0;
+	 	width: 100%;
+	 	height: 36px;
+	 	background-color: yellow;
+	 	font-size: 14px;
+	 	line-height: 14px;
+	 	font-weight: bold;
+	 	text-transform: uppercase;
+	 	text-align: center;
+	 	padding-top: 12px;
+	 	color: white;
+
+	 	&._booked {
+			background-color: @dark-cream;
+	 	}
+
+	 	&._sold {
+			background-color: @grey;
+	 	}
+
+	 	&._free {
+			background-color: @dark-green;
+
+	 	}
+	 }
+
+}

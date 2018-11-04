@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html
+    head
+        title Test Kelnik
+        link(href="/static/css/main.css" rel="stylesheet")
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" width="device-width")
+    body
+        include includes/header
+
+
+        if (page == 'home')
+            include home
+        //- include includes/footer    
+        //- if (page == 'contacts')
+        //-     include contacts
+        script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+        script(src="./static/js/lodash.js")
+        script(src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js")
+        script(src="/static/js/build.js")

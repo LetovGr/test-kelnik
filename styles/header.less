@@ -1,0 +1,257 @@
+.header {
+	position: relative;
+	width: 100%;
+	height: 125px;
+	background-color: @dark-green;
+	overflow: hidden;
+
+	&__wrapper {
+		position: relative;
+		width: 100%;
+		height: inherit;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 5%;
+		padding-right: 8%;
+		align-items: center;
+	}
+
+	&__logo {
+		position: relative;	
+		width: 35px;
+		margin-right: 6%;
+	}
+
+	&__logo svg{
+		width: 35px;
+		height: 85px;
+		fill: white;
+	}
+
+	&__menu {
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;	
+		// width: 75%;	
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		flex-grow: 1;		
+
+	}
+
+	&__menu-item {
+		display: inline-block;	
+		margin-right: 5%;
+
+		&:last-child {
+			// margin-right: 250px;
+		}
+	}
+
+	&__menu-item a {
+		display: inline-block;
+		list-style: none;
+		text-decoration: none;
+		white-space: nowrap;
+		color: white;
+		-ms-align-self: center;
+		line-height: 24px;
+		font-size: 24px;
+
+		&:hover {
+			color: @dark-cream;
+		}
+
+		&:active {
+			color: white;
+		}
+	}
+
+	&__contacts {
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		// width: 100%;
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		color: white;
+		font-size: 16px;
+		line-height: 16px;
+
+		a {
+			list-style: none;
+			text-decoration: none;
+			font-size: 25px;
+			color: white;
+			margin-bottom: 12px;
+			white-space: nowrap;
+
+			&:hover {
+				color: @dark-cream;
+			}
+		}
+	}
+
+	&__burger-btn {
+		position: fixed;
+		top: 6px;	
+		right: 6px;	
+		z-index: 5;
+		// display: flex;
+		// display: -webkit-flex;
+		// display: -moz-flex;
+		// display: -ms-flex;
+		// display: -o-flex;
+		// display: flex;
+		// -webkit-flex-direction: column;
+		// -moz-flex-direction: column;
+		// -ms-flex-direction: column;
+		// -o-flex-direction: column;
+		// flex-direction: column;
+		// justify-content: space-between;			
+		width: 20px;
+		height: 20px;
+		overflow: hidden;
+	}
+
+	@media (max-width: 1390px) {
+		&__menu a{
+			font-size: 14px;
+		}
+	}
+
+	@media (min-width: 750px) {
+		&__burger-btn {
+			display: none;
+		}	
+	}
+
+	@media (max-width: 750px) {
+
+		&__menu {
+			position: fixed;
+			display: none;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			z-index: 3;
+			background-color: @dark-green;
+
+			&._open  {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;	
+				-webkit-flex-direction: column;
+				-moz-flex-direction: column;
+				-ms-flex-direction: column;
+				-o-flex-direction: column;
+				flex-direction: column;
+				justify-content: flex-start;
+				padding-left: 10px;
+				padding-top: 20px;
+				z-index: 4;
+				border-left: 2px solid white;
+			}
+		}
+
+
+	}
+
+
+
+	&__burger-line {
+		width: 100%;	
+		height: 3px;
+		background-color: white;
+		opacity: 1;
+		
+
+		&._open {
+			// opacity: 0;
+			transition: opacity 500ms 500ms;
+		}
+
+		&:first-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translateY(0);
+			transition: transform 50ms;
+
+			&._open {
+				transform: translateY(-100%);
+				transition: transform 200ms;
+			}
+		}
+
+		&:nth-child(2) {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			transform: translateY(0);
+			transition: transform 300ms;
+
+			&._open {
+				transform: translateY(-100px);
+				transition: transform 200ms 100ms;
+			}
+		}
+
+		&:nth-child(3) {
+			position: absolute;
+			top: 16px;
+			left: 0;
+			transform: translateY(0);
+			transition: transform 200ms;
+
+			&._open {
+				transform: translateY(-100px);
+				transition: transform 200ms 200ms;
+			}
+		}
+	}
+
+	&__burger-cross {
+		position: absolute;
+		top: 0;
+		left: 5px;
+		width: 0px;
+		height: 0px;
+		color: white;
+		font-weight: bold;
+		font-size: 	15px;
+		opacity: 0;
+		transform: rotateY(0deg);
+		transition: transform 1000ms;
+		z-index: 777;
+		text-align: center;	
+		
+		&._open {
+			height: 20px;
+			opacity: 1;
+			height: 100%;
+			transform: rotateX(-180deg);
+			transition: opacity 300ms, transform 1000ms;
+		}
+
+	}
+}

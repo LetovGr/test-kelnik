@@ -1,0 +1,16 @@
+{
+  "name": "froncubator_app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.14.0",
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.0",
+    "gulp-exec": "^3.0.1",
+    "gulp-less": "3.1.0",
+    "gulp-pug": "3.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4"
+  }
+}
