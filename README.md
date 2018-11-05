@@ -2,5 +2,5 @@
 Запуск сборки
 
 ```sh
-$ gulp watch
+gulp watch
 ```
