@@ -17,6 +17,12 @@
 			color: @dark-green;
 		}
 
+		@media (max-width: 680px) {
+			&__title {
+				font-size: 25px;
+			}	
+		}
+
 		&__more-button {
 			position: absolute;
 			bottom: 70px;
@@ -58,6 +64,13 @@
 				}
 			}
 		}
+
+		@media (max-width: 680px) {
+			&__scroll-button svg {
+				width: 40px;
+				height: 40px;
+			}	
+		}
 }
 
 .flat {
@@ -91,8 +104,32 @@
 		display: -ms-flex;
 		display: -o-flex;
 		display: flex;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		width: 35%;
+	}
+
+	@media (max-width: 950px) {
+		&__sort-wrapper {
+			width: 50%
+		}	
+	}
+
+	@media (max-width: 680px) {
+		&__sort-wrapper {
+			-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-ms-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;
+			top: 5px;
+			left: 30px;
+			font-size: 15px;
+		}	
 	}
 
 
@@ -108,6 +145,14 @@
 			background-repeat: repeat-x;
 		}
 	}
+
+	@media (max-width: 950px) {
+		&__sort {
+			// margin-bottom: 100px;
+		}	
+	}
+
+
 
 	&__inside-button{
 		position: absolute;
@@ -141,36 +186,19 @@
 
 	}
 
-	&__inside-button-2{
-		content: "";
-		display: inline-block;
-		background-color: #f0f5f1;
-		border-radius: 50%;
-		border: none;
-		text-decoration: none;
-		width: 30px;
-		height: 30px;
-		padding-right: 5px;
-		background: #f5f8f8 url("../images/arrow-sort.png") center center no-repeat; 
+	@media (max-width: 680px) {
+		&__inside-button {
+			width: 20px;
+			height: 20px;
 
-		&._active-2{
-			content: "";
-			display: inline-block;
-			background-color: #f0f5f1;
-			border-radius: 50%;
-			border: none;
-			text-decoration: none;
-			width: 30px;
-			height: 30px;
-			padding-right: 5px;
-			background: #f5f8f8 url("../images/arrow-sort.png") center center no-repeat;
-			-webkit-transform: rotate(180deg);
-			-ms-transform: rotate(180deg);
-			-o-transform: rotate(180deg);
-			transform: rotate(180deg);
+			._arrow & {
+				width: 20px;
+				height: 20px;
+			}
 		}
-
 	}
+
+
 	
 	&__item-wrapper {
 		position: relative;
